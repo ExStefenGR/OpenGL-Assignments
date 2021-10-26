@@ -13,48 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\MFC">
+      <UniqueIdentifier>{bc847245-75c8-461c-b6bd-12952f4b4ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MFC">
+      <UniqueIdentifier>{3204afcf-be55-42a8-8928-cdb68904e689}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MFCTEST.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
     <ClInclude Include="MainFrm.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="MFCTEST.h">
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
     <ClInclude Include="MFCTESTDoc.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
     <ClInclude Include="MFCTESTView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\MFC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MFCTEST.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files\MFC</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="MFCTEST.cpp">
+      <Filter>Source Files\MFC</Filter>
     </ClCompile>
     <ClCompile Include="MFCTESTDoc.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MFC</Filter>
     </ClCompile>
     <ClCompile Include="MFCTESTView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MFC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
