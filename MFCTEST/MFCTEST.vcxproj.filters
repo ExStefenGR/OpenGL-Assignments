@@ -19,6 +19,12 @@
     <Filter Include="Source Files\MFC">
       <UniqueIdentifier>{3204afcf-be55-42a8-8928-cdb68904e689}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{4e12d0e2-b50a-48b4-a7c2-3f563d671ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{6b3d1981-f788-4c24-8812-d5554d6b4ceb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -45,6 +51,12 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files\MFC</Filter>
     </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="wglext.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -61,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="MFCTESTView.cpp">
       <Filter>Source Files\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
