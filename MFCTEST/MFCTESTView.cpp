@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "framework.h"
 #ifndef SHARED_HANDLERS
 #include "MFCTEST.h"
@@ -6,6 +5,7 @@
 
 #include "MFCTESTDoc.h"
 #include "MFCTESTView.h"
+#include "Screen.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -15,6 +15,9 @@ BEGIN_MESSAGE_MAP(CMFCTESTView, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
+	
+	ON_WM_CREATE()
+	ON_WM_SIZE()
 END_MESSAGE_MAP()
 
 CMFCTESTView::CMFCTESTView() noexcept
@@ -38,7 +41,30 @@ void CMFCTESTView::OnDraw(CDC* /*pDC*/)
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
+	Screen::Instance()->Refresh();
+	Screen::Instance()->Present();
 	// TODO: add draw code for native data here
+}
+
+int CMFCTESTView::OnCreate(LPCREATESTRUCT lpcs)
+{
+	if (CView::OnCreate(lpcs) == -1)
+	{
+		return -1;
+	}
+
+	if(!Screen::Instance()->Initialize(GetSafeHwnd()))
+	{
+		return -1;
+	}
+	ModifyStyleEx(WS_EX_CLIENTEDGE, 0);
+
+	return 1;
+}
+
+void CMFCTESTView::OnSize(UINT nType, int width, int height)
+{
+	Screen::Instance()->SetViewport(0, 0, width, height);
 }
 
 BOOL CMFCTESTView::OnPreparePrinting(CPrintInfo* pInfo)

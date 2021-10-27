@@ -26,7 +26,7 @@ void Screen::SetViewport(GLint x, GLint y, GLsizei width, GLsizei height)
 	m_viewport = glm::vec4(x, y, width, height);
 }
 //======================================================================================================
-bool Screen::Initialize(HWND wnd, const std::string& filename)
+bool Screen::Initialize(HWND wnd)
 {
 	m_deviceContext = GetDC(wnd);
 
@@ -66,13 +66,13 @@ bool Screen::Initialize(HWND wnd, const std::string& filename)
 
 	//SetPixelFormat(m_deviceContext, m_pixelFormat, &m_pixelFormatClass);
 
-	int profile = WGL_CONTEXT_CORE_PROFILE_BIT_ARB;
+	int profile = WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB;
 	//int profile = WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB;
 
 	//set the attributes for creating a modern OpenGL conGLText 
 	//the final 0 value in the array indicates the end of the array
-	int attribs[] = { WGL_CONTEXT_MAJOR_VERSION_ARB, 4),
-					   WGL_CONTEXT_MINOR_VERSION_ARB, 5),
+	int attribs[] = { WGL_CONTEXT_MAJOR_VERSION_ARB, 4,
+					   WGL_CONTEXT_MINOR_VERSION_ARB, 5,
 					   WGL_CONTEXT_PROFILE_MASK_ARB, profile, 0 };
 
 					   //create the modern OpenGL context using the extension function
@@ -88,6 +88,10 @@ bool Screen::Initialize(HWND wnd, const std::string& filename)
 					   wglMakeCurrent(m_deviceContext, m_renderContext);
 
 					   //==================================================================================
+					   if (!gladLoadGL())
+					   {
+
+					   }
 
 					   glEnable(GL_BLEND);
 					   glEnable(GL_LINE_SMOOTH);

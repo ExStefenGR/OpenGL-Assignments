@@ -1,10 +1,8 @@
 #pragma once
-
 #include <Windows.h>
 #include <glm.hpp>
-#include <string>
-#include "wglext.h"
 #include "glad.h"
+#include "wglext.h"
 
 class Screen
 {
@@ -14,7 +12,7 @@ public:
 	static Screen* Instance();
 
 	void SetViewport(GLint x, GLint y, GLsizei width, GLsizei height);
-	bool Initialize(HWND wnd, const std::string& filename);
+	bool Initialize(HWND wnd);
 
 	void ActivateContext();
 	void DeactivateContext();

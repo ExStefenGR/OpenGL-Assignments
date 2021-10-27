@@ -1,5 +1,3 @@
-
-#include "pch.h"
 #include "framework.h"
 
 #ifndef SHARED_HANDLERS

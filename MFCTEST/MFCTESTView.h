@@ -4,6 +4,8 @@ class CMFCTESTView : public CView
 public:
 	CMFCTESTDoc* GetDocument() const;
 	virtual void OnDraw(CDC* pDC);  // overridden to draw this view
+	virtual int OnCreate(LPCREATESTRUCT lpcs);
+	virtual void OnSize(UINT nType, int cx, int cy);
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 public:
 	virtual ~CMFCTESTView();
